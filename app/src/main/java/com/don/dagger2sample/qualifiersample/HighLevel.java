@@ -17,6 +17,4 @@ import javax.inject.Qualifier;
 @Documented
 @Retention(RetentionPolicy.RUNTIME)
 public @interface HighLevel {
-
-    int value() default 1000;
 }

@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.don.dagger2sample.DaggerAppComponent;
 import com.don.dagger2sample.retrofitsample.retrofit.HttpResultFunc;
 import com.don.dagger2sample.retrofitsample.retrofit.JokeServiceApi;
 import com.don.dagger2sample.retrofitsample.retrofit.MyJoke;
@@ -35,7 +36,7 @@ public class RetrofitSampleActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        DaggerApiComponent.builder()
+        DaggerAppComponent.builder()
                 .retrofitApiModule(new RetrofitApiModule())
                 .build()
                 .inject(this);

@@ -18,7 +18,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
  * <p>
- * Description：
+ * Description：可以分开在多个Module中
  * </p>
  *
  * @author tangzhijie
