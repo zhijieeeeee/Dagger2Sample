@@ -15,6 +15,9 @@ import javax.inject.Inject;
  */
 public class BasicSampleActivity extends AppCompatActivity {
 
+    //使用@Inject时，不能用private修饰符修饰类的成员属性。
+    //当看到某个类被@Inject标记时，就会到他的构造方法中，
+    //如果这个构造方法也被@Inject标记的话，就会自动初始化这个类，从而完成依赖注入。
     @Inject
     Student student;
     @Inject
