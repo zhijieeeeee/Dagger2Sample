@@ -4,10 +4,6 @@ import android.app.Application;
 
 import com.don.dagger2sample.singletonsample.DaggerSingletonComponent;
 import com.don.dagger2sample.singletonsample.SingletonComponent;
-import com.don.dagger2sample.singletonsample.SingletonModule;
-
-import java.util.Arrays;
-import java.util.List;
 
 /**
  * <p>
@@ -28,9 +24,7 @@ public class MyApplication extends Application {
 
         myApplication=this;
 
-        singletonComponent = DaggerSingletonComponent.builder()
-                .singletonModule(new SingletonModule())
-                .build();
+        singletonComponent = DaggerSingletonComponent.create();
     }
 
     public SingletonComponent getSingletonComponent() {

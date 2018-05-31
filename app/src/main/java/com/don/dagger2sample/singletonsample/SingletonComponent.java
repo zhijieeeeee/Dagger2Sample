@@ -11,7 +11,7 @@ import dagger.Component;
  *
  * @author tangzhijie
  */
-@Component(modules = SingletonModule.class)
+@Component()
 @Singleton
 public interface SingletonComponent {
 

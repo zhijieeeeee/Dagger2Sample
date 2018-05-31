@@ -27,10 +27,7 @@ public class SecondActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-//        DaggerSingletonComponent.builder()
-//                .singletonModule(new SingletonModule())
-//                .build()
-//                .inject(this);
+//        DaggerSingletonComponent.create().inject(this);
         MyApplication.myApplication.getSingletonComponent().inject(this);
 
         Log.i("MyLog", "test=" + test);

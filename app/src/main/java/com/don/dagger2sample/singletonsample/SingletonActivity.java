@@ -14,11 +14,17 @@ import javax.inject.Inject;
  * <p>
  * Description：@Scope的作用只是保证依赖在@Component中是唯一的，可以理解为“局部单例”
  * Scope是需要成对存在的，
- * 在Module的Provide方法中使用了@Scope，
+ * 在Module的Provide方法中使用了@Scope或者类上使用了@Scope
  * 那么对应的Component中也必须使用@Scope注解，
  * 当两边的@Scope名字一样时（比如同为@Singleton）,
  * 那么该Provide方法提供的依赖将会在Component中保持“局部单例”。
  * </p>
+ *
+ *
+ * 如果依赖实例的注入来源是@Provides方法时，@Provides方法必须被@Scope注解；
+ * 如果依赖实例的注入来源是@Inject注解的构造函数时，实例类必须被@Scope注解。这样@Scope注解才会有效。
+ *
+ *
  *
  * @author tangzhijie
  */
@@ -36,12 +42,7 @@ public class SingletonActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-//        DaggerSingletonComponent.builder()
-//                .singletonModule(new SingletonModule())
-//                .build()
-//                .inject(this);
-
-
+//        DaggerSingletonComponent.create().inject(this);
         MyApplication.myApplication.getSingletonComponent().inject(this);
 
         Log.i("MyLog", "test=" + test);
